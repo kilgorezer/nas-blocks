@@ -14,7 +14,7 @@ def generate_content_label():
 def blockstart(generated_label, extracted_condition):
     return (
         f"{extracted_condition} jump {generated_label}.begin\n"
-        f"set l_@!#@!#NAS.{generated_label} false\n"
+        f"resetdata packages l_@!#@!#NAS.{generated_label}\n"
         f"jump {generated_label}.end\n"
         f"{generated_label}.begin\n"
     )
