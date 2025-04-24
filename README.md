@@ -1,4 +1,4 @@
-# NASB
+# NASB (Not Awesome Script Blocks)
 This language adds blocks to NAS\
 Instead of your conditionals looking like this:
 ```
@@ -21,3 +21,4 @@ they look like this:
     quit
 ```
 This language is compatible with existing NAS code without modification, and compiles directly into NAS code.
+Primary difference is the file extension is .nasb instead of .nas, and the then and end commands now exist.
