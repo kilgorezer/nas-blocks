@@ -14,14 +14,17 @@ def generate_content_label():
 def blockstart(generated_label, extracted_condition):
     return (
         f"{extracted_condition} jump {generated_label}.begin\n"
+        f"set l_@!#@!#NAS.{generated_label} false\n"
         f"jump {generated_label}.end\n"
         f"{generated_label}.begin\n"
     )
 
 def blockend(generated_label):
     return (
-        f"if $%@#$#@$%@%#@$!@=NASB|=|\"\" msg\n"
+        #f"ifnot $%@#$#@$%@%#@$!@=NASB|=|\"\" error package $%@#$#@$%@%#@$!@=NASB is set\n"
+        f"set l_@!#@!#NAS.{generated_label} true\n"
         f"{generated_label}.end\n"
+        f"if l_@!#@!#NAS.{generated_label} msg\n"
     )
 
 def hconditional(line, cleaned_line, then_part):
@@ -47,7 +50,7 @@ if len(args) < 2:
 
 input_filename = args[1]
 base_name, _ = ospath.splitext(input_filename)
-output_filename = base_name + ".nas"
+output_filename = base_name + ".compiled.nas"
 
 try:
     errorflag = False
