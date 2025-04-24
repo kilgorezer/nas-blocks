@@ -3,23 +3,43 @@ This language adds blocks to NAS\
 Instead of your conditionals looking like this:
 ```
 #onJoin
-    if a|=|5 jump #1
-    jump #2
-    #1
+    msg Hello. Checking if a is 5 and less than 6, and seperately checking that a is not 4...
+    set a 5
+    if a|<|5 call #part2
+	if a|=|4 jump #ais4
+	ifnot a|=|4 msg a is not 4
+    quit
+
+#part2
     msg a is 5
-    msg condition accepted
-    #2
+    if a|<|6 msg and less than 6.
+    quit
+
+#ais4
+    msg a is 4???
+    msg how is this possible???
     quit
 ```
 they look like this:
 ```
 using local_packages
 #onJoin
+using local_packages
+#onJoin
+    msg Hello. Checking if a is 5 and less than 6, and seperately checking that a is not 4...
+    set a 5
     if a|=|5 then
         msg a is 5
-        msg condition accepted
+        if a|<|6 then
+            msg and less than 6.
+        end
     end
-    quit
+	if a|=|4 then
+        msg a is 4???
+        msg how is this possible???
+    end
+	else msg a is not 4
+	quit
 ```
 This language is compatible with existing NAS code without modification, and compiles directly into NAS code.\
 Primary differences are the file extension is .nasb instead of .nas, and the `then` and `end` commands now exist.\
