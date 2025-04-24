@@ -7,7 +7,7 @@ Instead of your conditionals looking like this:
     set a 5
     if a|<|5 call #part2
 	if a|=|4 jump #ais4
-	ifnot a|=|4 msg a is not 4
+	msg a is not 4
     quit
 
 #part2
