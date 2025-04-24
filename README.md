@@ -22,3 +22,7 @@ they look like this:
 ```
 This language is compatible with existing NAS code without modification, and compiles directly into NAS code.\
 Primary differences are the file extension is .nasb instead of .nas, and the `then` and `end` commands now exist.
+
+Usage:\
+`[standard conditional with conditions] then` - start block\
+`end` - end block
