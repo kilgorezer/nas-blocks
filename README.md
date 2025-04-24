@@ -1,6 +1,6 @@
-NASB
-This language adds blocks to NAS
-Instead of your conditionals looking like this:
+#NASB
+This language adds blocks to NAS\
+Instead of your conditionals looking like this:\
 ```
 #onJoin
     if a|=|5 jump #1
