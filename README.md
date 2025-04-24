@@ -24,8 +24,6 @@ they look like this:
 ```
 using local_packages
 #onJoin
-using local_packages
-#onJoin
     msg Hello. Checking if a is 5 and less than 6, and seperately checking that a is not 4...
     set a 5
     if a|=|5 then
