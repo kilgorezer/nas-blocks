@@ -2,6 +2,7 @@
 This language adds blocks to NAS\
 Instead of your conditionals looking like this:
 ```
+using local_packages
 #onJoin
     if a|=|5 jump #1
     jump #2
@@ -13,6 +14,7 @@ Instead of your conditionals looking like this:
 ```
 they look like this:
 ```
+using local_packages
 #onJoin
     if a|=|5 then
         msg a is 5
