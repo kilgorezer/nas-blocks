@@ -38,7 +38,7 @@ def hnone(line, cleaned_line, then_part):
     print('Compiled: ' + repr(line))
     return line
 
-start = r"^(?:if|ifnot)\s+(?:([^\s\[\|]+)\s*\|(?:=|<=|>=|<|>)\|\s*(?:\w+|\d+(?:\.\d+)?|\".*?\"|true|false)|item\s+([^\s\[\|]+)|label\s+(#[^\s\[\|]+)|([^\s\[\|]+))\s+then$"
+start = r"^(?:if|ifnot)\s+(?:([^\|\s]+)\|(?:=|<=|>=|<|>)\|(?:\w+|\d+(?:\.\d+)?|\".*?\"|true|false)|item\s+([^\|\s]+)|label\s+(#[^\|\s]+)|([^\|\s]+))\s+then$|^\s*else\s+then$"
 end = r"^end$"
 
 if len(args) < 2:
@@ -50,7 +50,7 @@ base_name, _ = ospath.splitext(input_filename)
 output_filename = base_name + ".nas"
 
 try:
-    errorflag = false
+    errorflag = False
     with open(input_filename, 'r') as infile, open(output_filename, "w") as outfile:
         for line_number, line in enumerate(infile, 1):
             cleaned_line = line.strip()
@@ -68,8 +68,8 @@ try:
             elif end_match:
                 print(f"Line {line_number}: End of block - '{cleaned_line}'")
                 outfile.write(hend(line, cleaned_line, 'else'))
-                if nestedlabels.length == 0:
-                    errorflag = true
+                if len(nestedlabels) == 0:
+                    errorflag = True
                 nestedlabels.pop()
             else:
                 print(f"Line {line_number}: No match - '{cleaned_line}'")
@@ -77,10 +77,10 @@ try:
             print('Original: ' + repr(line))
             print('Depth: ' + str(len(nestedlabels)) + "\n")
     if len(nestedlabels) > 0:
-        errorflag = true
+        errorflag = True
     if errorflag:
         print('ERROR COMPILING: Your script may not run incorrectly')
-        print('REASON: Unmatched indents.')
+        print('REASON: Unmatched indents or incorrect syntax in conditional blocks.')
 
 except FileNotFoundError:
     print(f"Error: Input file '{input_filename}' not found.")
