@@ -29,6 +29,10 @@ Usage:\
 `end` - end block\
 \
 It is recommended to enable [local packages](https://notawesome.cc/docs/nas/documentation.nas#:~:text=using%20local_packages%0A)
-or else when you run `/osa show every single package` it will look like this:
+or else when you run `/osa show every single package` it will look like this
 ![image](https://github.com/user-attachments/assets/ac798989-fb83-4ae4-a7f0-655684a6aeaa)
+instead of this
+![image](https://github.com/user-attachments/assets/41d0ae2c-12b0-4c45-8b6a-7fb0611a7fdb)
+
+
 
