@@ -20,5 +20,5 @@ they look like this:
     end
     quit
 ```
-This language is compatible with existing NAS code without modification, and compiles directly into NAS code.
-Primary difference is the file extension is .nasb instead of .nas, and the then and end commands now exist.
+This language is compatible with existing NAS code without modification, and compiles directly into NAS code.\
+Primary differences are the file extension is .nasb instead of .nas, and the `then` and `end` commands now exist.
