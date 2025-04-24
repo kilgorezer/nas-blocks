@@ -21,8 +21,10 @@ they look like this:
     quit
 ```
 This language is compatible with existing NAS code without modification, and compiles directly into NAS code.\
-Primary differences are the file extension is .nasb instead of .nas, and the `then` and `end` commands now exist.
-
+Primary differences are the file extension is .nasb instead of .nas, and the `then` and `end` commands now exist.\
+\
 Usage:\
 `[standard conditional with conditions] then` - start block\
-`end` - end block
+`end` - end block\
+\
+It is recommended to enable [local packages](https://notawesome.cc/docs/nas/documentation.nas#:~:text=using%20local_packages%0A).
